@@ -1,6 +1,7 @@
 let cells = document.querySelectorAll("#field td")
 //let butt = document.querySelector(".button")
 let i = 0
+let result = document.querySelector("#winner__text")
 
 for (let cell of cells) {
     cell.addEventListener('click', function start() {
@@ -14,7 +15,10 @@ for (let cell of cells) {
 
         this.removeEventListener("click", start)
         if (isWinner(cells) === true) {
-            console.log(`Победитель ${this.textContent}`)
+            result.textContent = (`Победитель ${this.textContent}`)
+        }
+        else if (i == 9) {
+            result.textContent = "Ничья";
         }
     })
 
@@ -73,6 +77,3 @@ butt.addEventListener("click", function () {
     }
 })
 */
-
-
-
